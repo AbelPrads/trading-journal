@@ -1,0 +1,76 @@
+1. Create Directory: 
+mkdir trading-journal
+cd trading-journal
+
+2. Initialize npm in the project directory:
+npm init -y
+
+3. Install Dependencies
+npm install express mongoose nodemon dotenv cors
+npm install react react-dom webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/preset-react
+
+Server-side —
+
+Express.js: A popular Node.js framework for building web applications. 
+It provides a simple and flexible way to create routes, handle requests and responses, and use middleware.
+
+Mongoose: A MongoDB object modeling tool for Node.js. It makes it easier to interact with MongoDB databases using a more object-oriented approach.
+
+Nodemon: A tool that automatically restarts your Node.js application when you make changes to your code. 
+This can be helpful for development as it eliminates the need to manually restart your server.
+
+Dotenv: A tool that allows you to store sensitive environment variables in a .env file, which is not included in your version control system. 
+This helps keep your credentials secure.
+
+Cors: A middleware that allows your server to handle cross-origin requests. 
+This is important for modern web applications that often make requests to different domains.
+
+Client-side —
+
+React.js: A JavaScript library for building user interfaces. 
+It uses a component-based architecture to make it easier to create complex and reusable UI components.
+
+React-DOM: A library that renders React components to the DOM.
+
+Webpack: A module bundler that combines your JavaScript files into a single file for production. 
+It also handles tasks like transpiling code and loading assets.
+
+Babel-loader: A loader for Webpack that allows you to use modern JavaScript syntax in your code. 
+Babel will transpile your code into a format that is compatible with older browsers.
+
+@babel/core: The core library for Babel.
+
+@babel/preset-env: A preset that automatically selects the necessary plugins to target specific browsers.
+
+@babel/preset-react: A preset that provides the necessary plugins for using JSX syntax in your React components.
+
+4. Created index.js file inside backend, then add script to package.json
+
+"type": "module",
+
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  }, 
+
+  node index.js - This script is typically used to start your Node.js application in production mode.
+  nodemon index.js - Automatically restarts your application whenever it detects changes to your code, which can be helpful for debugging and development.
+  module - Tells Node.js to treat project as ES Modules to be able to user import and export syntax
+
+5. Create config.js and index.js 
+  
+  config.js = set PORT number 
+  index.js = import config.js then add listener to PORT and 
+
+
+  .env File: Create a file named .env in your project's root directory with the line MONGO_URI=<your_connection_string>. Make sure to ignore this file in your version control system (e.g., .gitignore). Then, use a library like dotenv to load the environment variables from the .env file in your Node.js application.
+
+
+cd your-project-directory   # Navigate to your project directory
+git init                   # Initialize the repository if needed
+git status                 # Check the status of your repo
+git add README.md gitignore.git trading-journal-backend/ trading-journal-frontend/
+git add -u                 # Stage deleted files
+git commit -m "Transfer Local Files to Github - 1st Batch"
+git remote add origin https://github.com/yourusername/yourrepository.git   # Only if not already set
+git push origin main       # Push changes to the main branch
