@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import {Routes, Route}  from 'react-router-dom';
+import homeDashboard from './pages/homeDashboard';
+import fetchTrade from './pages/fetchTrade';
+import addTrade from './pages/addTrade';
+import updateTrade from './pages/updateTrade';
+import deleteTrade from './pages/deleteTrade';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Routes>
+      <Route path='/' element={<homeDashboard />} />
+      <Route path='/dashboard/addTrade/' element={<addTrade />} />
+      <Route path='/dashboard/fetchTrade/:id' element={<fetchTrade />} />
+      <Route path='/dashboard/updateTrade/:id' element={<updateTrade />} />
+      <Route path='/dashboard/deleteTrade/:id' element={<deleteTrade />} />
+    </Routes>
+  );
+};
 
-export default App
+export default  App;

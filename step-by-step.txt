@@ -61,16 +61,29 @@ Babel will transpile your code into a format that is compatible with older brows
   
   config.js = set PORT number 
   index.js = import config.js then add listener to PORT and 
-
-
   .env File: Create a file named .env in your project's root directory with the line MONGO_URI=<your_connection_string>. Make sure to ignore this file in your version control system (e.g., .gitignore). Then, use a library like dotenv to load the environment variables from the .env file in your Node.js application.
 
+6. Create dashboard CRUD API calls
+7. Refactor Code by using routes.
+8. Apply CORS policy
+9. Push repo to GIT
+    cd your-project-directory   # Navigate to your project directory
+    git init                   # Initialize the repository if needed
+    git status                 # Check the status of your repo
+    git add README.md gitignore.git trading-journal-backend/ trading-journal-frontend/
+    git add -u                 # Stage deleted files
+    git commit -m "Transfer Local Files to Github - 1st Batch"
+    git remote add origin https://github.com/yourusername/yourrepository.git   # Only if not already set
+    git push origin main       # Push changes to the main branch
 
-cd your-project-directory   # Navigate to your project directory
-git init                   # Initialize the repository if needed
-git status                 # Check the status of your repo
-git add README.md gitignore.git trading-journal-backend/ trading-journal-frontend/
-git add -u                 # Stage deleted files
-git commit -m "Transfer Local Files to Github - 1st Batch"
-git remote add origin https://github.com/yourusername/yourrepository.git   # Only if not already set
-git push origin main       # Push changes to the main branch
+10.Create react project, vite, tailwind css 
+    npm create vite@latest
+    cd /front-end
+    npm -i 
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+
+11. SPA and Add react router dom
+12. npm -i axios react-icons
+
+
