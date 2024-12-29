@@ -1,8 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
-import { PORT , MONGO_URI } from "./config.js";
-import dashboardRoutes from './routes/dashboardRoutes.js';
 import cors from 'cors';
+import dotenv from 'dotenv';
+import { PORT , MONGO_URI } from "./config.js";
+import DashboardRoutes from './1-routes/dashboardRoutes.js';
 
 const app = express();
 
@@ -39,5 +40,7 @@ app.get('/', (request, response) => {
     console.log("Success");
     });
 
-app.use('/dashboard', dashboardRoutes)
+
+// ROUTES 
+app.use('/dashboard', DashboardRoutes)
 

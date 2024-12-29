@@ -1,6 +1,6 @@
 import express from "express";
 import { format } from 'date-fns';
-import { Journal } from '../models/tradeLog.js';
+import { Journal } from '../3-models/tradeLog.js';
 
 const route = express.Router();
 
@@ -20,7 +20,7 @@ route.post('/', async (request, response) => {
         const totalValue = request.body.avePrice * request.body.shares;
 
         const newTrade = {
-            status: 'ACTIVE',
+            status: request.body.status,
             date: formattedDate,
             symbol: request.body.symbol,
             stop: request.body.stop,

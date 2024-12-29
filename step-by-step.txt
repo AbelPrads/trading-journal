@@ -84,6 +84,6 @@ Babel will transpile your code into a format that is compatible with older brows
     npx tailwindcss init -p
 
 11. SPA and Add react router dom
+   - npm i react-router-dom
 12. npm -i axios react-icons
-
 
