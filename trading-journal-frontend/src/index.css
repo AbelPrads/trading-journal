@@ -29,3 +29,16 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Pending Action Button - Pulse*/ 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px #fc03a9; /* Initial glow */
+  }
+  50% {
+    box-shadow: 0 0 20px #f752c0; /* Increased glow */
+  }
+  100% {
+    box-shadow: 0 0 5px #fc03a9; /* Return to initial glow */
+  }
+}

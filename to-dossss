@@ -1,0 +1,54 @@
+PRIO ITEMS
+1. Analytics Dashboard
+2. Setups Checklist - Setup Dropdown, Main Setup plus number (Uptrend Contrac,+1)
+3. Remarks Tab - Add a view remarks button. Modal must contain contents of remarks
+4. Add Portfolio Profile w button
+- Portfolio Name
+- Date Created
+- Starting Capital
+- Additional Capital
+- Total Capital Allocatd
+- Description
+
+Ideas
+1. Add Error BLURBS
+2. Automatic Calculations of Position
+4. Fix Resizing Issue of Containers
+5. Refactor constants
+6. Use length returned by endpoint in Homedashboard
+8. Premature exits
+9. Scraper
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function scrapeAltTextToString() {
+  const elements = document.querySelectorAll('[alt]');
+  let allAltText = "";
+
+  elements.forEach(element => {
+    const altValue = element.getAttribute('alt');
+    if (altValue !== null) {
+      allAltText += altValue + "\n"; // Append alt text with a newline
+    }
+  });
+
+  if (allAltText.length > 0) {
+    return allAltText; // Return the entire string
+  } else {
+    return "No elements with 'alt' attributes found.";
+  }
+}
+
+const result = scrapeAltTextToString();
+console.log(result); // Output the result to the console

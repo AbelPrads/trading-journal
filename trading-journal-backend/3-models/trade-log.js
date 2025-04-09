@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
-const tradeLogSchema = mongoose.Schema(
+const tradeLogSchema = mongoose.Schema(    
     {
         status: {
             type: String,
             required: true,
         },
-        date: {
-            type: String,
+        closedDate: {
+            type: Date,
         },
         symbol: {
             type: String,
@@ -39,7 +39,7 @@ const tradeLogSchema = mongoose.Schema(
             type: Number,
         },
         percentGainLoss: {
-            type: String,
+            type: Number,
         },
         setup: {
             type: String,
@@ -55,4 +55,5 @@ const tradeLogSchema = mongoose.Schema(
     }
 );
 
-export const Journal = mongoose.model('tradeLog', tradeLogSchema, 'tradeLog');
+export const Trade = mongoose.model('trade-log', tradeLogSchema, 'trade-log');
+

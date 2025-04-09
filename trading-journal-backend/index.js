@@ -1,14 +1,19 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from 'cors';
-import dotenv from 'dotenv';
-import { PORT , MONGO_URI } from "./config.js";
-import DashboardRoutes from './1-routes/dashboardRoutes.js';
+import dotenv from "dotenv";
+import DashboardRoutes from './1-routes/dashboard-routes.js';
+import DashboardAnalyticsRoutes from './1-routes/dashboard-analytics-routes.js';
+
+
+dotenv.config();
 
 const app = express();
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const PORT = process.env.PORT;
+
 
 // ALLOW ALL ORIGINS
 app.use(cors());
@@ -23,7 +28,7 @@ app.use(cors());
 // );
 
 mongoose
-    .connect(MONGO_URI)
+    .connect(process.env.MONGO_URL)
     .then(() => {
         console.log('Successfully Connected to trading-journal database');
 
@@ -31,16 +36,10 @@ mongoose
             console.log(`Server running on port: ${PORT}`);
             });
     })
-    .catch(() => {
-        console.log(error);
+    .catch((error) => {
+        console.log(`Unable to connect: ${error}`);
     });
-
-app.get('/', (request, response) => {
-    response.status(241).send('Welcome to Trading Journal by Abel Prado');
-    console.log("Success");
-    });
-
 
 // ROUTES 
 app.use('/dashboard', DashboardRoutes)
-
+app.use('/dashboard-analytics', DashboardAnalyticsRoutes)

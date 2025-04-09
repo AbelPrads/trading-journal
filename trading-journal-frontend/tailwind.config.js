@@ -1,4 +1,4 @@
-import HomeDashboard from './src/pages/homeDashboard';
+import HomeDashboard from './src/pages/homeDashboard/layout/homeDashboard';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,20 +9,30 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        'darkBgDefault': '#16151D',
-        'homeNavbar': '#31323F',
+        'darkBgDefault': '#0a0a0d',
+        'homeNavbar': '#262730',
         'button': '#14B785',
         'homeAnalytics1': '#2E3644',
         'homeAnalytics2': '#252A35',
-        'homeAnalytics3': '#393B3E',
-        'tradeSummary': '#6F35C0'
+        'homeAnalytics3': '#5A5B5D',
+        'tradeSummary': '#7146A7',
       },
       fontFamily: {
         'albert': ['"Albert Sans"', 'sans-serif'],
       },
       borderColor: {
-        'button': '#14B785'
-      }
+        'button': '#14B785',
+        'stroke': '#626262'
+      },
+      keyframes: {
+        pulse: {
+          '0%, 100%': { boxShadow: '0 0 5px #fc03a9' },
+          '50%': { boxShadow: '0 0 20px #f752c0' },
+        },
+      },
+      animation: {
+        pulse: 'pulse 2s linear infinite',
+      },
     },
   },
   plugins: [],
